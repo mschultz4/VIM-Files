@@ -51,6 +51,13 @@ set expandtab       " Expand TABs to spaces
 nnoremap <Tab> :bnext<CR> 
 nnoremap <S-Tab> :bprevious<CR>
 
-colors tomorrow-night
+colorscheme Tomorrow-Night
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.ng set filetype=html
+
+" Map Switch capslock and escape while in vim
+au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
