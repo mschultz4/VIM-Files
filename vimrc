@@ -1,31 +1,4 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-"Plugins
-Plugin 'jelera/vim-javascript-syntax'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line--------------------------------------------------------------
+execute pathogen#infect()
 
 " My Stuff
 set autochdir       "Auto change directory to current file
@@ -51,15 +24,12 @@ nnoremap <C-q> <C-v>
 
 command Bd bn<bar>bd# "bb to remove buffer from split w/out closing window
 
+" Colors
 colorscheme Tomorrow-Night-Bright
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead *.ng set filetype=html
-
-" set guicursor+=i:ver100-iCursor "not sure if this is necessary
 highlight iCursor guifg=white guibg=steelblue
-" Map Switch capslock and escape while in vim
-"au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-"au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.ng set filetype=html   
