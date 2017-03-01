@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
 " My Stuff
-set autochdir       "Auto change directory to current file
+" set autochdir       "Auto change directory to current file
 set ignorecase
 set guioptions-=m   " Hide the menu bar
 set guioptions-=T   " Hide the toolbar
