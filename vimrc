@@ -30,6 +30,7 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 highlight iCursor guifg=white guibg=steelblue
+set guicursor+=i:ver100-icursor
 
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.ng set filetype=html   
